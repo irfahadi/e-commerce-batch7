@@ -25,6 +25,19 @@ const category = (sequelize,DataTypes)=>{
           },
         ]
       });
-}
 
-export default category
+      // table category hasMany Product, set foreignkey sesuai relasi di table    
+category.associate = models => {
+  category.hasMany(models.product, {foreignKey: 'prod_cate_id', onDelete: 'CASCADE' });
+};
+
+return category;
+
+
+};
+
+
+
+
+
+export default category;

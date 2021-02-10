@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { sequelize } from '../models/index';
+import { sequelize } from '../models/';
 
 const readCategoryMethod = async (req, res) => {
     const category = await req.context.models.category.findAll();
@@ -42,11 +42,25 @@ const deleteCategoryMethod = async (req, res) => {
     return res.send(true);
 };
 
+const filterCategoryByName = async (req, res) => {
+    const category = await req.context.models.category.findAll(
+        {
+            where:
+                { cate_name: { [Op.like]: req.params.categoryName + "%" } }
+
+        }
+    );
+    return res.send(category);
+}
+
+
+
 
 export default {
     readCategoryMethod,
     findCategoryMethod,
     addCategoryMethod,
     deleteCategoryMethod,
-    editCategoryMethod
+    editCategoryMethod,
+    filterCategoryByName
 }
