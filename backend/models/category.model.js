@@ -1,5 +1,5 @@
-const category = (sequelize,DataTypes)=>{
-    return sequelize.define('category', {
+const category = (sequelize, DataTypes)=>{
+    const category = sequelize.define('category', {
         cate_id: {
           autoIncrement: true,
           type: DataTypes.INTEGER,
@@ -26,18 +26,12 @@ const category = (sequelize,DataTypes)=>{
         ]
       });
 
-      // table category hasMany Product, set foreignkey sesuai relasi di table    
-category.associate = models => {
-  category.hasMany(models.product, {foreignKey: 'prod_cate_id', onDelete: 'CASCADE' });
-};
+      // table category hasMany Countries, set foreignkey sesuai relasi di table    
+    category.associate = models => {
+      category.hasMany(models.product, {foreignKey: 'prod_cate_id', onDelete: 'CASCADE' });
+    };
 
-return category;
+  return category;
+}
 
-
-};
-
-
-
-
-
-export default category;
+export default category
