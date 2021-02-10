@@ -1,4 +1,4 @@
-import Sequelize from 'sequelize'
+import Sequelize from 'sequelize';
 
 export const sequelize = new Sequelize(
     process.env.DATABASE,
@@ -9,10 +9,11 @@ export const sequelize = new Sequelize(
     },
   );
 
-  const Op = Sequelize.Op;
+const Op = Sequelize.Op;
 
 const models = {
     category : sequelize.import('./category.model'),
+    users : sequelize.import('./users.model'),
     address : sequelize.import('./address.model'),
     province : sequelize.import('./province.model'),
     city : sequelize.import('./city.model'),
