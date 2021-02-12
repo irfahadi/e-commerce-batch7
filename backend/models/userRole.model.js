@@ -31,12 +31,10 @@ const userRole = (sequelize, DataTypes)=>{
           },
         ]
       });
-
-       // table regions hasMany Countries, set foreignkey sesuai relasi di table    
-    UserRole.associate = models => {
-      UserRole.hasMany(models.users, {foreignKey: 'user_id', onDelete: 'CASCADE' });
-    };
-
+        UserRole.associate = models => {
+        UserRole.hasMany(models.users, {foreignKey: 'user_id', onDelete: 'CASCADE' });
+      };
+  
       return UserRole;
     }
 export default userRole;
