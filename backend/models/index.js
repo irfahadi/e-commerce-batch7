@@ -29,8 +29,18 @@ Object.keys(models).forEach(key => {
     if ('associate' in models[key]) {
       models[key].associate(models);
     }
+<<<<<<< HEAD
 });
 
 // export { sequelize };
 export {Op};
 export default models;
+=======
+  });
+
+
+export {Op };
+export default models;
+// // export { sequelize };
+// export default models;
+>>>>>>> 7d727bd3ceb07b4047cd92bcc3cec5e80df66094

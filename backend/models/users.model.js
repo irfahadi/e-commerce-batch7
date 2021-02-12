@@ -33,10 +33,17 @@ const users = (sequelize,DataTypes)=>{
           },
         ]
       });
+<<<<<<< HEAD
       // Users.associate = models => {
       //   Users.hasOne(models.address,{foreignKey : 'add_user_id',onDelete : 'CASCADE'});
       // };
       // return Users;
+=======
+      Users.associate = models => {
+        Users.hasOne(models.address,{foreignKey : 'add_user_id',onDelete : 'CASCADE'});
+      };
+      return Users;
+>>>>>>> 7d727bd3ceb07b4047cd92bcc3cec5e80df66094
 }
 
 export default users

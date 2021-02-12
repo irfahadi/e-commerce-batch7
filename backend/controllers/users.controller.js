@@ -1,4 +1,6 @@
 import {sequelize} from '../models/index';
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
 
 const findAllUsers = async (req, res, next) => {
     const allUsers = await req.context.models.users.findAll({

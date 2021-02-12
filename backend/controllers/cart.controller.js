@@ -11,23 +11,26 @@ const readCartMethod = async (req, res) => {
     const cart = await req.context.models.cart.findAll();
     return res.send(cart);
 };
-// const addCartMethod = async (req, res) => {
-//     const {
-//       cart_id,
-//       cart_created_on,
-//       cart_is_closed,
-//       cart_total,
-//     } = req.body;
+const addCartMethod = async (req, res) => {
+    const {
+      cart_id,
+      cart_created_on,
+      cart_is_closed,
+      cart_total,
+    } = req.body;
+    // if (cart_id= '1'{
+    //     console.log('oke berhasil');
+    // } else
 
-//     const cart = await req.context.models.cart.create({
-//       cart_id: cart_id,
-//       cart_created_on: cart_created_on,
-//       cart_is_total: cart_created_on,
-//       cart_is_closed: cart_is_closed,
-//       cart_total: cart_total,
-//     })
-//     return res.send(cart);
-//   }
+    const cart = await req.context.models.cart.create({
+      cart_id: cart_id,
+      cart_created_on: cart_created_on,
+      cart_is_total: cart_created_on,
+      cart_is_closed: cart_is_closed,
+      cart_total: cart_total,
+    })
+    return res.send(cart);
+  }
 
 // const editCartMethod = async (req, res) => {
 //     const {
