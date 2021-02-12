@@ -3,6 +3,7 @@ import cors from "cors";
 import express from "express";
 import models, { sequelize } from './models';
 import routes from './routes';
+import apiCartOrder from './controllers/apiCartOrder';
 
 const app = express();
 app.use(cors());

@@ -3,13 +3,7 @@ const bcrypt = require('bcrypt');
 const saltRounds = 10;
 
 const findAllUsers = async (req, res, next) => {
-    const allUsers = await req.context.models.users.findAll({
-
-        include: [{
-            model: req.context.models.address
-        }]
-    }
-    );
+    const allUsers = await req.context.models.users.findAll({});
     return res.send(allUsers);
 }
 

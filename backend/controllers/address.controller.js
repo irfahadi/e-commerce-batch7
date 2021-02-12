@@ -1,6 +1,3 @@
-import { Router } from 'express';
-import { sequelize } from '../models/index';
-
 //select Address
 const allAddress = async (req, res) => {
     const address = await req.context.models.address.findAll(
