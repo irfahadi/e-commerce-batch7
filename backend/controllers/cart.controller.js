@@ -1,47 +1,38 @@
-import { Router } from 'express';
-import { sequelize } from '../models/index';
+const cartCheck = async (req,res,next) => {
+    let newCart=null;
+    const anyCart = req.body.cart_id
+    if(anyCart !== null){
+        next()
+    }else{
+    newCart = await req.context.models.cart.create({
+            'cart_total':null,
+            'cart_created_on':Date.now(),
+            'cart_is_closed':false,
+            'cart_user_id':12
+        });
 
-
-
-const readCart = async (req, res) => {
-    const cart = await req.context.models.cart.findAll();
-    return res.send(cart);
+    //ini masih salah 
+    req.body.cart_id = newCart
+    next()
+    }
 }
 
-const findIdCart = async (req, res) => {
-    const cart = await req.context.models.cart.findByPk(
-        req.params.cartId,
-    );
-    return res.send(cart);
-};
-
-// const addChart = async (req,res) => {
-//     const {cart_created_on, cart_is_boolean, cart_total} = req.body;
-//     const cart = await req.context.models.cart.create({
-//         cart_created_on: cart_created_on,
-//         cart_is_boolean: cart_is_boolean,
-//         cart_total: cart_total
-//     });
-//     return res.send(cart);
-// };
-
-// const editChart = async (req,res) => {
-//     const {cart_created_on, cart_is_boolean, cart_total} = req.body;
-//     const cart = await req.context.models.cart.update({
-//         cart_created_on: cart_created_on,
-//         cart_is_boolean: cart_is_boolean,
-//         cart_total: cart_total
-//     },
-//     {
-//         where: {cart_id: req.params.cartId}
-//     });
-//     return res.sendStatus(200);
-// };
-
-
-export default {
-    readCart,
-    findIdCart
-    // addChart,
-    // editChart
+const findAllCart = async (req,res,next) => {
+    const allCart = await req.context.models.cart.findAll();
+    return res.send(allCart)
 }
+const findAllCartWOrdi = async (req,res,next) => {
+    const allCart = await req.context.models.cart.findAll({
+        include :[{
+            model : req.context.models.orderDetail
+        }]
+    });
+    return res.send(allCart)
+}
+
+// const addProduct = async (req,res,next)=>{
+//     console.log(req.body.items);
+//     res.send("works")
+// }
+
+export default {cartCheck,findAllCart,findAllCartWOrdi};
