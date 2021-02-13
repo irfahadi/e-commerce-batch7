@@ -4,12 +4,12 @@ const createCartItems = async (req,res,next) =>{
     const {cart_id,cart_user_id,cart_is_closed,items} = req.body;
     let cartId=null;
 
-    const total = items.reduce((sum,el) => sum + Number(el.qty));
+    //const total = items.reduce((sum,el) => Number(sum) + Number(el.qty));
 
     if (cart_id === null || cart_id === undefined){
 
          cartId = await req.context.models.cart.create({
-            cart_total:total,
+            cart_total:null,
             cart_created_on:Date.now(),
             cart_is_closed:cart_is_closed,
             cart_user_id:cart_user_id
@@ -29,12 +29,10 @@ const createCartItems = async (req,res,next) =>{
                 ordi_quantity : el.qty,
                 ordi_price : el.price,
                 ordi_cart_id : cartId.cart_id,
-                ordi_order_name:"ORD-22082016-4"
+                ordi_order_name:el.ordi_order_name
             });
         });
     }
-
-
     next();
 }
 
