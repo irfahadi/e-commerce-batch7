@@ -21,6 +21,5 @@ export default {
     product,
     users,
     userRole,
-    cart,
-    orderDetail
+    cart
 }

@@ -23,8 +23,6 @@ const models = {
     userRole : sequelize.import('./userRole.model'),
     cart : sequelize.import('./cart.model'),
     orderDetail : sequelize.import('./orderDetail.model')
-
-
 };
 
 Object.keys(models).forEach(key => {
