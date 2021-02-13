@@ -16,10 +16,18 @@ const createUsersRoles = async (req,res,next) => {
         });
     }
 
-    if (userId.user_id !== null){
-        
-        items.map(async (el)=>{
+    const getRole = async (req, res) => {
+        const roles = await req.context.models.roles.findAll(
+        {
+            where :{
+                role_name : req.body.role
+            }
+        }
+        );
+        return res.send(roles); 
+      }
 
-        })
+    if (userId.user_id !== null){
+       
     }
 }
