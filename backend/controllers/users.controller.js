@@ -97,7 +97,7 @@ const createUsersAddress = async (req, res, next) => {
           addr_street1: el.addr_street1,
           addr_street2: el.addr_street2,
           add_city_id: el.add_city_id,
-          add_user_id: userId.user_id
+          add_user_id: user_id
         });
       });
     }

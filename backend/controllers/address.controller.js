@@ -25,7 +25,6 @@ const findAddress = async (req, res) => {
 const addAddress = async (req,res) => {
 const { addr_id, addr_email, addr_fullname, addr_phone_number, addr_is_default, addr_zipcode, addr_street1, addr_street2, add_city_id, add_user_id} = req.body;
   const address = await req.context.models.address.create({
-    addr_id : addr_id,
     addr_email : addr_email,
     addr_fullname : addr_fullname,
     addr_phone_number : addr_phone_number,
