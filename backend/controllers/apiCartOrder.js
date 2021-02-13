@@ -1,13 +1,8 @@
-
-
 const createCartItems = async (req,res,next) =>{
     const {cart_id,cart_user_id,cart_is_closed,items} = req.body;
-    let cartId=null;
-
-    const total = items.reduce((sum,el) => sum + Number(el.qty));
-
-    if (cart_id === null || cart_id === undefined){
-
+    let cartId=req.body.cart_id;
+    let total = items.reduce((sum,el) => sum + el.qty,0)
+        if (cart_id === null || cart_id === undefined){
          cartId = await req.context.models.cart.create({
             cart_total:total,
             cart_created_on:Date.now(),
@@ -33,8 +28,6 @@ const createCartItems = async (req,res,next) =>{
             });
         });
     }
-
-
     next();
 }
 

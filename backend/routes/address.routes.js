@@ -48,8 +48,8 @@ const router = Router();
 // });
 
 router.get('/', addressController.allAddress);
-router.get('/:addr_id', addressController.findAddress);
 router.post('/', addressController.addAddress);
+router.get('/:addr_id', addressController.findAddress);
 router.put('/:addr_id', addressController.editAddress);
 router.delete('/:addr_id', addressController.deleteAddress);
 

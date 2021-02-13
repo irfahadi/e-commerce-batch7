@@ -24,7 +24,7 @@ app.use('/api/address',routes.address)
 app.use('/api/category',routes.category);
 app.use('/api/product',routes.product)
 app.use('/api/user_role',routes.userRole)
-app.use('/api/cart',routes.cart) 
+app.use('/api/cart',routes.cart)
 
 // Start
 const dropDatabaseSync = false;

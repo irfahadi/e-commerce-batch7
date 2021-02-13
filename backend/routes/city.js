@@ -6,6 +6,7 @@ import cityCtrl from '../controllers/city.controller'
 const router = Router();
 
 router.get('/', cityCtrl.readCityMethod);
+router.get('/addCity-address')
 router.get('/:cityId', cityCtrl.findCityMethod);
 router.post('/', cityCtrl.addCityMethod);
 router.delete('/:cityId', cityCtrl.deleteCityMethod);
