@@ -72,6 +72,7 @@ const createUsersAddress = async (req, res, next) => {
     let userId = null;
     if (user_id === null || user_id === undefined) {
       userId = await req.context.models.users.create({
+        user_id :user_id,
           user_name: user_name,
           user_password: user_password,
           user_email: user_email,
@@ -86,7 +87,7 @@ const createUsersAddress = async (req, res, next) => {
         });
         req.body.user_id = userId;
     }
-    if (userId.user_id !== null) {
+    if (req.body.user_id !== null) {
       address.map(async (el) => {
         await req.context.models.address.create({
           addr_id: el.addr_id,
@@ -97,11 +98,13 @@ const createUsersAddress = async (req, res, next) => {
           addr_street1: el.addr_street1,
           addr_street2: el.addr_street2,
           add_city_id: el.add_city_id,
-          add_user_id: user_id
+          add_user_id: req.body.user_id
         });
       });
     }
     next();
   };
 
-export default {findUser,findAllUsers,createUser,updateUser,deleteUser, createUsersAddress};
+export default {
+  findUser,findAllUsers,createUser,updateUser,deleteUser, createUsersAddress
+};
