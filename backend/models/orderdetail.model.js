@@ -1,5 +1,5 @@
-const orderdetail = (sequelize, DataTypes) => {
-  const orderdetail =  sequelize.define('order_detail', {
+const orderDetail = (sequelize, DataTypes) => {
+  const orderDetail =  sequelize.define('order_detail', {
     ordi_quantity: {
       type: DataTypes.INTEGER,
       allowNull: true
@@ -32,8 +32,8 @@ const orderdetail = (sequelize, DataTypes) => {
   });
 
     // menghilangkan atribut id
-    orderdetail.removeAttribute('id')
-    return orderdetail;
+    orderDetail.removeAttribute('id')
+    return orderDetail;
 }
 
-export default orderdetail;
+export default orderDetail;

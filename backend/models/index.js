@@ -1,4 +1,5 @@
 import Sequelize from 'sequelize';
+import orderdetail;
 
 export const sequelize = new Sequelize(
   process.env.DATABASE,
@@ -21,7 +22,8 @@ const models = {
   product: sequelize.import('./product.model'),
   roles: sequelize.import('./roles.model'),
   cart: sequelize.import('./cart.model'),
-  orderdetail: sequelize.import('./orderdetail.model')
+  orderDetail: sequelize.import('./orderdetail'),
+  orders : sequelize.import('./orders.model')
 };
 
 Object.keys(models).forEach(key => {

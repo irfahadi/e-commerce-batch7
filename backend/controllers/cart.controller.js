@@ -42,6 +42,5 @@ export default {
   readCartMethod,
   findCartMethod,
   deleteCartMethod,
-  createCartItem,
   addCartMethod
 };
