@@ -1,9 +1,5 @@
 const orderDetail = (sequelize, DataTypes)=>{
-<<<<<<< HEAD
-    const OrderDetail= sequelize.define('order_detail', {
-=======
     const OrderDetail = sequelize.define('order_detail', {
->>>>>>> 70d23ef9cc191a5cd85e9f58989f032d01f80ecd
         ordi_quantity: {
           type: DataTypes.INTEGER,
           allowNull: true
@@ -35,15 +31,9 @@ const orderDetail = (sequelize, DataTypes)=>{
         timestamps: false
       });
       OrderDetail.removeAttribute('id');
-<<<<<<< HEAD
-      return OrderDetail;
-}
-
-=======
       OrderDetail.associate = models => {
         OrderDetail.belongsTo(models.cart,{foreignKey : 'ordi_cart_id'})
       }
       return OrderDetail;
     }
->>>>>>> 70d23ef9cc191a5cd85e9f58989f032d01f80ecd
 export default orderDetail;
