@@ -33,13 +33,13 @@ const users = (sequelize,DataTypes)=>{
           },
         ]
       });
-      // Users.associate = models => {
-      //   Users.hasMany(models.address,{onDelete : 'CASCADE'});
-      //   Users.hasMany(models.orders,{foreignKey : 'order_user_id',onDelete : 'CASCADE'});
+      Users.associate = models => {
+        Users.hasMany(models.address,{onDelete : 'CASCADE'});
+        Users.hasMany(models.orders,{foreignKey : 'order_user_id',onDelete : 'CASCADE'});
 
-      // //   Users.hasMany(models.cart, {foreignKey: 'cart_user_id', onDelete: 'CASCADE' });
+      //   Users.hasMany(models.cart, {foreignKey: 'cart_user_id', onDelete: 'CASCADE' });
 
-      // };
+      };
       return Users;
 }
 

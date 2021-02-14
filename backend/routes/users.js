@@ -5,10 +5,10 @@ const router = Router()
 
 router.get('/',userController.findAllUsers);
 router.post('/',userController.createUser);
-router.put('/',userController.updateUser)
-router.delete('/',userController.deleteUser)
+router.put('/',userController.updateUser);
+router.delete('/',userController.deleteUser);
 router.get('/find/:username',userController.findUser);
-router.post('/orders',apiUserOrder.createUserOrder)
+router.post('/orders',apiUserOrder.createUserOrder);
 //router.get('/users-address',usersController.findUserWAddress);
 
 router.post('/addUsers',userController.createUsersAddress,userController.findAllUsers);
