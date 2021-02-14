@@ -8,7 +8,10 @@ import product from './product'
 import users from './users'
 import userRole from './userRole';
 import cart from './cart';
-import orderDetail from './orderDetail.js';
+import orderDetail from './orderDetail';
+import orders from './orders';
+
+
 
 
 export default {
@@ -21,5 +24,7 @@ export default {
     product,
     users,
     userRole,
-    cart
+    cart,
+    orderDetail,
+    orders
 }

@@ -32,7 +32,8 @@ const orderDetail = (sequelize, DataTypes)=>{
       });
       OrderDetail.removeAttribute('id');
       OrderDetail.associate = models => {
-        OrderDetail.belongsTo(models.cart,{foreignKey : 'ordi_cart_id'})
+      OrderDetail.belongsTo(models.orders, {foreignKey: 'ordi_order_name'});
+      OrderDetail.belongsTo(models.cart,{foreignKey : 'ordi_cart_id'})
       }
       return OrderDetail;
     }

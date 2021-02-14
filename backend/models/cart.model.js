@@ -42,5 +42,9 @@ const cart = (sequelize, DataTypes)=>{
         ]
       });
 }
+<<<<<<< HEAD
 
 export default cart;
+=======
+export default cart
+>>>>>>> ac5de5c990e6519112bbb9b5beed7263faee8df2
