@@ -35,7 +35,7 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING(255),
       allowNull: true
     },
-    add_city_id: {
+    add_user_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
@@ -43,7 +43,7 @@ module.exports = function(sequelize, DataTypes) {
         key: 'user_id'
       }
     },
-    add_user_id: {
+    add_city_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {

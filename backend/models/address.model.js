@@ -65,10 +65,10 @@ const address = (sequelize,DataTypes)=>{
           },
         ]
       });
-
+      Address.removeAttribute('userUserId')
       Address.associate = models => {
           Address.belongsTo(models.users,{onDelete : 'CASCADE'});
-          Address.belongsTo(models.city,{foreignKey :'add_city_id', onDelete :'CASCADE'});
+          Address.belongsTo(models.city,{ onDelete :'CASCADE'});
       };
 
       // Address.associate = models => {

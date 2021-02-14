@@ -28,7 +28,7 @@ const roles = (sequelize,DataTypes)=>{
       });
 
       roles.associate = models => {
-        roles.hasMany(models.userRole, {foreignKey: 'user_id', onDelete: 'CASCADE' });
+        roles.hasMany(models.userRole, { onDelete: 'CASCADE' });
       };
 
       return roles;
