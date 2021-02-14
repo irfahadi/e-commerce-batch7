@@ -18,16 +18,13 @@ const models = {
     province : sequelize.import('./province.model'),
     city : sequelize.import('./city.model'),
     productImage : sequelize.import('./productImage.model'),
-    roles : sequelize.import('./roles.model'),
     product : sequelize.import('./product.model'),
     userRole : sequelize.import('./userRole.model'),
     cart : sequelize.import('./cart.model'),
     orderDetail : sequelize.import('./orderDetail.model'),
     orders : sequelize.import('./orders.model'),
-
-
-    cart : sequelize.import('./cart.model')
-
+    cart : sequelize.import('./cart.model'),
+    roles : sequelize.import('./roles.model')
 };
 
 Object.keys(models).forEach(key => {
@@ -37,7 +34,7 @@ Object.keys(models).forEach(key => {
   });
 
 
-export {Op };
+export { Op };
 export default models;
-// // export { sequelize };
-// export default models;
+
+

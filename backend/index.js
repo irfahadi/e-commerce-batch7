@@ -5,6 +5,8 @@ import models, { sequelize } from './models';
 import routes from './routes';
 import apiCartOrder from './controllers/apiCartOrder';
 
+
+const port = process.env.PORT || 1337
 const app = express();
 app.use(cors());
 app.use(express.json());

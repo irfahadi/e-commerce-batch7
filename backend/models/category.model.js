@@ -25,11 +25,13 @@ const category = (sequelize,DataTypes)=>{
           },
         ]
       });
-      category.associate = models => {
-        category.hasMany(models.product,{foreignKey : 'prod_cate_id'})
-      }
 
-      return category;
+      // table category hasMany Countries, set foreignkey sesuai relasi di table    
+    category.associate = models => {
+      category.hasMany(models.product, {foreignKey: 'prod_cate_id', onDelete: 'CASCADE' });
+    };
+
+  return category;
 }
 
-export default category;
+export default category
