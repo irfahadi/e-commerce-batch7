@@ -35,13 +35,16 @@ const createOrderItems = async (req,res,next) =>{
     const {order_name, order_create_on, order_is_closed, order_total, order_user_id, items} = req.body;
     let orderId=null;
 
-    // const total = items.reduce((sum,el) => sum + Number(el.qty));
+    var total = items.reduce(function(val, element) {
+        return val + (element.qty*element.price);
+    }, 0);
+
 
     if (order_name === null || order_name === undefined){
 
          orderId = await req.context.models.orders.create({
             order_name      : "ORD-"+Date.now(),
-            order_total     : null,
+            order_total     : total,
             order_create_on :Date.now(),
             order_is_closed :order_is_closed,
             order_user_id   :order_user_id
