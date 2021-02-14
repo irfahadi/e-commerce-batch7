@@ -16,6 +16,7 @@ const cartCheck = async (req,res,next) => {
     next()
     }
 }
+
 const findAllCart = async (req,res,next) => {
     const allCart = await req.context.models.cart.findAll();
     return res.send(allCart)
