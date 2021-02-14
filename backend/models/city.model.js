@@ -45,12 +45,12 @@ const city = (sequelize, DataTypes) => {
         city.belongsTo(models.province,{onDelete: 'CASCADE' });
       };
 
-  return city;
+ 
 
       // city.associate = models => {
       //   city.belongsTo(models.province,{foreignKey: 'city_prov_id'});
       // };
-      // return city;
+      return city;
 
 };
 
