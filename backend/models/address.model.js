@@ -67,7 +67,7 @@ const address = (sequelize,DataTypes)=>{
       });
 
       Address.associate = models => {
-          Address.belongsTo(models.users,{foreignKey : 'add_user_id', onDelete : 'CASCADE'});
+          Address.belongsTo(models.users,{onDelete : 'CASCADE'});
       };
       return Address;
 }
