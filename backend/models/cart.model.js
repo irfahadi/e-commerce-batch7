@@ -1,5 +1,6 @@
-const cart = (sequelize, DataTypes)=>{
-    return sequelize.define('cart', {
+const cart = (sequelize,DataTypes)=>{
+
+    const cart = sequelize.define('cart', {
         cart_id: {
           autoIncrement: true,
           type: DataTypes.INTEGER,
@@ -41,5 +42,6 @@ const cart = (sequelize, DataTypes)=>{
           },
         ]
       });
+      return cart
 }
 export default cart

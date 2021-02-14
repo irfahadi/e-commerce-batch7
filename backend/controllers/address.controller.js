@@ -1,11 +1,11 @@
 //select Address
 const allAddress = async (req, res) => {
     const address = await req.context.models.address.findAll(
-    //   {
-    //   include: [{
-    //       model: req.context.models.city
-    //   }]
-    // }
+      // {
+      // include: [{
+      //     model: req.context.models.city
+      // }]
+    // }};
   );
     return res.send(address);
 }

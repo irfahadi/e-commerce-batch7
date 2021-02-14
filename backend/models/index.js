@@ -1,4 +1,4 @@
-import Sequelize from 'sequelize';
+import Sequelize from 'sequelize'
 
 export const sequelize = new Sequelize(
     process.env.DATABASE,
@@ -31,10 +31,8 @@ Object.keys(models).forEach(key => {
     if ('associate' in models[key]) {
       models[key].associate(models);
     }
-  });
+});
 
-
-export { Op };
+// export { sequelize };
+export {Op};
 export default models;
-
-

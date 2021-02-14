@@ -5,9 +5,7 @@ import apiCart from "../controllers/apiCartOrder";
 import cart from '../models/cart.model';
 
 const router = Router()
-router.get('/',(req,res,next)=>{
-    cartController.findAllCart(req,res,next)
-})
+router.get('/',cartController.findAllCart)
 router.get('/all',cartController.findAllCartWOrdi)
 router.post('/',cartController.cartCheck,orderDetailController.addProductToOrderDetail);
 router.post('/addCart',apiCart.createCartItems,cartController.findAllCart);

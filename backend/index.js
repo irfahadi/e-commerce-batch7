@@ -25,12 +25,18 @@ app.use('/api/city',routes.city);
 app.use('/api/roles',routes.roles);
 app.use('/api/address',routes.address);
 app.use('/api/category',routes.category);
+<<<<<<< HEAD
 app.use('/api/product',routes.product);
 app.use('/api/user_role',routes.userRole);
 app.use('/api/cart',routes.cart);
 app.use('/api/orderDetail',routes.orderDetail);
 app.use('/api/orders',routes.orders);
 
+=======
+app.use('/api/product',routes.product)
+app.use('/api/userRole',routes.userRole)
+app.use('/api/cart',routes.cart) 
+>>>>>>> 79cb098348b8cb7b69ba00829ae3fddc4eedacbe
 
 // Start
 const dropDatabaseSync = false;

@@ -1,8 +1,3 @@
-import { Router } from 'express';
-import { sequelize, Op } from '../models/index';
-
-
-
 // put your business logic using method sequalize
 const readOrderDetail = async (req, res) => {
     const orderDetail = await req.context.models.orderDetail.findAll(
@@ -48,16 +43,22 @@ const addOrderDetail = async (req, res) => {
 //         return res.sendStatus(200);
 //   };
 
+const findOrdiMethod = async (req, res) => {
+    const orderDetail = await req.context.models.orderDetail.findByPk(req.params.ordi_quantity);
+    return res.send(orderDetail);
+};
 
+const readOrdiMethod = async (req, res) => {
+    const orderDetail = await req.context.models.orderDetail.findAll();
+    return res.send(orderDetail);
+};
 
-
-
-
-
-// Gunakan export default agar semua function bisa dipakai di file lain.
 export default{
     readOrderDetail,
     findOrderDetail,
     addOrderDetail,
+    readOrdiMethod,
+    findOrdiMethod
     // editOrderDetail
 }
+

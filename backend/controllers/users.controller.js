@@ -5,9 +5,9 @@ const saltRounds = 10;
 const findAllUsers = async (req, res) => {
     const allUsers = await req.context.models.users.findAll({
 
-        include: [{
-            model: req.context.models.address
-        }]
+    //     include: [{
+    //         model: req.context.models.address
+    //     }]
     }
     );
     return res.send(allUsers);
