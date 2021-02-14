@@ -3,6 +3,7 @@ import cors from "cors";
 import express from "express";
 import models, { sequelize } from './models';
 import routes from './routes';
+import apiCartOrder from './controllers/apiCartOrder';
 
 const app = express();
 app.use(cors());
@@ -22,12 +23,18 @@ app.use('/api/city',routes.city);
 app.use('/api/roles',routes.roles);
 app.use('/api/address',routes.address);
 app.use('/api/category',routes.category);
+<<<<<<< HEAD
 app.use('/api/product',routes.product);
 app.use('/api/user_role',routes.userRole);
 app.use('/api/cart',routes.cart);
 app.use('/api/orderDetail',routes.orderDetail);
 app.use('/api/orders',routes.orders);
 
+=======
+app.use('/api/product',routes.product)
+app.use('/api/user_role',routes.userRole)
+app.use('/api/cart',routes.cart)
+>>>>>>> 65efed9748ae71ed773181855892de58d2ee86e2
 
 // Start
 const dropDatabaseSync = false;
