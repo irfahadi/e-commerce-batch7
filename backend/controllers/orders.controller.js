@@ -45,14 +45,16 @@ const createOrderItems = async (req,res,next) =>{
             order_create_on :Date.now(),
             order_is_closed :order_is_closed,
             order_user_id   :order_user_id
-        }).catch((error)=>{
+        }
+        
+        ).catch((error)=>{
             return res.send(JSON.stringify({
                 name : error.name,
                 message : error.message
             }))
         });
         // insert into cart (cart_total,cart...)values(cart_total);
-        req.body.order_name = orderId;
+        req.body = orderId;
       }
 
     if (req.body.order_name !== null){
