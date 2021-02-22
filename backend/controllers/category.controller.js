@@ -15,7 +15,7 @@ const findCategoryMethod = async (req, res) => {
 };
 
 const addCategoryMethod = async (req, res) => {
-    const { cate_name } = req.body;
+    const { cate_name } = req.body.data; //tambah
     const category = await req.context.models.category.create({
         cate_name: cate_name
     });
@@ -23,13 +23,14 @@ const addCategoryMethod = async (req, res) => {
 };
 
 const editCategoryMethod = async (req, res) => {
-    const { cate_name } = req.body;
+    const { cate_name } = req.body.data; //tambah
     const category = await req.context.models.category.update({
         cate_name: cate_name
-    }, {
+    },
+    {returning:true,        //tambah
         where: { cate_id: req.params.categoryId }
     });
-    return res.sendStatus(200);
+    return res.send(true); //ubah
 };
 
 
